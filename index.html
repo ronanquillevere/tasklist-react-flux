@@ -1,0 +1,45 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+            Simple React Flux RxJS Tutorial
+        </title>
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+        <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+        <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/4.1.0/rx.all.min.js"></script>
+
+        
+
+    </head>
+    <body>
+        <header>
+          <div id="logout">sign-out &nbsp;<i class="fa fa-sign-out" aria-hidden="true"></i></div>
+          <div id="taskBadge">tasks</div>
+          <div>Remaining tasks</div>
+          <div id="title">Tutorial Flux React RxJs</div>
+        </header>
+        <div id="taskCreateForm"></div>
+        <div id="taskList"></div>
+        <script src="./dispatcher.js"></script>
+        <script src="./taskStore.js"></script>
+        <script src="./createTaskForm.js"></script>
+        <script src="./createTaskList.js"></script>
+        <script src="./createBadge.js"></script>
+        <script type="text/javascript">
+          
+          //add a task programmatically
+          dispatcher.dispatch({
+            type : 'CREATE_TASK',
+            task : {
+              id: Date.now(),
+              text : 'Added programmatically'
+            }
+          });
+
+        </script>
+    </body>
+</html>
